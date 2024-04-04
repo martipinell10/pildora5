@@ -54,9 +54,9 @@ resource "aws_autoscaling_group" "jumphost_asg" {
   }
 }
 
-# -----------------------------------------------
+ -----------------------------------------------
 
-#resource "aws_lb" "wordpress_alb" {
+resource "aws_lb" "wordpress_alb" {
   name               = "wordpress-alb"
   internal           = false
   load_balancer_type = "application"
@@ -65,7 +65,7 @@ resource "aws_autoscaling_group" "jumphost_asg" {
   subnets            = aws_subnet.public_subnets.*.id
 }
 
-#resource "aws_lb_target_group" "alb_target_grp" {
+resource "aws_lb_target_group" "alb_target_grp" {
   name        = "wordpress-alb-tg"
   port        = 80
   protocol    = "HTTP"
@@ -82,7 +82,7 @@ resource "aws_autoscaling_group" "jumphost_asg" {
   }
 }
 
-#resource "aws_lb_listener" "alb_listener" {
+resource "aws_lb_listener" "alb_listener" {
   load_balancer_arn = aws_lb.wordpress_alb.arn
   port              = 80
   protocol          = "HTTP"
