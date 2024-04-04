@@ -111,28 +111,28 @@ resource "aws_launch_template" "app_server_lt" {
 }
 
 # Autoscaling group pels application servers.
-#resource "aws_autoscaling_group" "app_server_asg" {
-#  name_prefix         = "app-server-ASG"
-#  min_size            = 2
-#  max_size            = 4
-#  desired_capacity    = 2
-#  vpc_zone_identifier = aws_subnet.private_app_subnets.*.id
-#  target_group_arns   = [aws_lb_target_group.alb_target_grp.arn]
-#
-#  launch_template {
-#    id      = aws_launch_template.app_server_lt.id
-#    version = "$Default"
-#  }
+resource "aws_autoscaling_group" "app_server_asg" {
+  name_prefix         = "app-server-ASG"
+  min_size            = 2
+  max_size            = 4
+  desired_capacity    = 2
+  vpc_zone_identifier = aws_subnet.private_app_subnets.*.id
+  target_group_arns   = [aws_lb_target_group.alb_target_grp.arn]
 
-#  tag {
-#    key                 = "Name"
-#    value               = "app-server"
-#    propagate_at_launch = true
-#  }
-#
-#  lifecycle {
-#    create_before_destroy = true
-#  }
-#
-#  depends_on = [aws_db_instance.wordpress_db, aws_efs_file_system.wordpress_EFS, aws_efs_mount_target.efs_mount]
-#}
+  launch_template {
+    id      = aws_launch_template.app_server_lt.id
+    version = "$Default"
+  }
+
+  tag {
+    key                 = "Name"
+    value               = "app-server"
+    propagate_at_launch = true
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  depends_on = [aws_db_instance.wordpress_db, aws_efs_file_system.wordpress_EFS, aws_efs_mount_target.efs_mount]
+}
