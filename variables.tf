@@ -121,13 +121,13 @@ variable "ssh_key_pair" {
 # Domain name
 variable "domain" {
   type        = string
-  default     = "liliangaladima.website"
+  default     = "awspildora5.website"
   description = "domain name"
 }
 
 # Sub-domain name
 variable "subdomain" {
   type        = string
-  default     = "wordpress.liliangaladima.website"
+  default     = "wordpress.awspildora5.website"
   description = "name of sub domain"
 }
