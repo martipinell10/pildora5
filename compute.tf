@@ -54,7 +54,7 @@ resource "aws_autoscaling_group" "jumphost_asg" {
   }
 }
 
- -----------------------------------------------
+ #-----------------------------------------------
 
 resource "aws_lb" "wordpress_alb" {
   name               = "wordpress-alb"
