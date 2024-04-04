@@ -9,12 +9,12 @@ output "RDS_endpoint" {
 }
 
 # Loadbalancer DNS name
-#output "ALB_DNS" {
-#  value = aws_lb.wordpress_alb.dns_name
-#}
+output "ALB_DNS" {
+  value = aws_lb.wordpress_alb.dns_name
+}
 
 # NS records
-#output "name_servers" {
-#  value       = aws_route53_zone.wp_zone.name_servers
-#  description = "records of domain name servers"
-#}
+output "name_servers" {
+  value       = aws_route53_zone.wp_zone.name_servers
+  description = "records of domain name servers"
+}
