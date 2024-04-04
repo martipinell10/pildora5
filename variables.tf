@@ -114,7 +114,7 @@ variable "instance_type" {
 # AWS keypair
 variable "ssh_key_pair" {
   type        = string
-  default     = "default"
+  default     = "pildora5"
   description = "name of AWS SSH key-pair"
 }
 
