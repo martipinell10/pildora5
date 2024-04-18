@@ -1,6 +1,6 @@
 # Creació del bucket S3 privat. Aquest guardará l'estat del terraform.
 resource "aws_s3_bucket" "tfstate" {
-  bucket        = "wordpress-pildora5-01-01"
+  bucket        = "wordpress-pildora5"
   force_destroy = true
 }
 
