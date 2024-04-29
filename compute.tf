@@ -57,7 +57,7 @@ resource "aws_autoscaling_group" "jumphost_asg" {
  #-----------------------------------------------
 
 resource "aws_lb" "wordpress_alb" {
-  name               = "wordpress-alb"
+  name               = "wordpress-alb-pildora5"
   internal           = false
   load_balancer_type = "application"
   ip_address_type    = "ipv4"
